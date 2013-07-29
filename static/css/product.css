@@ -1,0 +1,113 @@
+#box{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+#cata{
+	width: 100px;
+	float: left;
+	background: #eee;
+	font-size: 16px;
+}
+#cata .nav-header{
+	font-size: 17px;
+	color: #000;
+	font-weight: normal;
+	text-shadow:none;
+	padding: 5px 0 10px 20px;
+	border-top: 3px solid #1d88b4;
+	border-bottom: 1px solid #fff;
+}
+
+#cata li :hover{
+	background: #fff;
+	color: #1d88b4;
+}
+
+.product{
+	width: 850px;
+	display: inline-block;
+	margin-left: 20px;
+}
+
+
+.product .list{
+	width: 250px;
+	height: 300px;
+	float: left;
+	border: 1px solid #999;
+	border-radius: 4px;
+	margin: 10px;
+	position: relative;
+	overflow: hidden;
+}
+
+.product .list .price{
+	position: absolute;
+	background: #000;
+	opacity: 0.8;
+	color: #fff;
+	font-size: 20px;
+	font-weight: bolder;
+	top: 190px;
+	right: 0;
+	width: 75%;
+	text-align: right;
+	padding: 10px 20px 10px 0px;
+
+}
+
+.product .list .pic{
+	width: 250px;
+	overflow: hidden;
+	display: table-cell;
+	height: 250px;
+	text-align: center;
+	vertical-align: middle;
+	*display: block;
+    *font-size: 219px;/*约为高度的0.873，200*0.873 约为175*/
+    *font-family:Arial;/*防止非utf-8引起的hack失效问题，如gbk编码*/
+}
+
+.product .list img{
+	max-width: 100%;
+	max-height: 100%;
+	vertical-align:middle;
+}
+
+.product .list .pname{
+	background: #1d88b4;
+	color: #fff;
+	height: 40px;
+	width: 240px;
+	text-align: center;
+	line-height: 20px;
+	padding:5px;
+}
+
+.product .list .pname a{
+	color: #fff;
+}
+
+#search{
+	width: 200px;
+	float: right;
+	margin-right: 10px;
+	position: relative;
+}
+
+#search input {
+	height: 30px;
+	width: 200px;
+	height: 20px\9;
+}
+
+#search .searchTip{
+	top: 8px;
+	width: 25px;
+	position: absolute;
+	right: 0px;
+	text-indent: -9999em;
+	background: url(/static/img/glyphicons-halflings.png) -40px 0px;
+	cursor: pointer;
+}

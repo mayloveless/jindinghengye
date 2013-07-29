@@ -1,0 +1,103 @@
+$def with (indexObj)
+
+$var title: 产品展示|北京金鼎恒业实验仪器经销部
+$var cssfiles: /static/css/product.css
+$var jsfiles: /static/js/product.js
+$var path : $indexObj['path']
+$var activeNav: product
+
+<div id="box">
+	
+	<ul class="nav nav-list" id="cata">
+		<li class="nav-header">产品分类</li>
+		<li><a href="/product">全部产品</a></li>
+	 	$if indexObj['cata']:
+			$for cata in indexObj['cata']:
+				<li ><a href="/product?cata=$cata.cataId">$cata.cataName</a></li>
+	</ul>
+
+	$if indexObj['pCount']:
+		<div class="alert alert-success margin">共查到条$int(indexObj['pCount'])信息
+			<form class="navbar-search pull-left " id="search" style="margin-top:-5px" action="/product/search" >
+		  		<input type="text" class="search-query" name="skey" placeholder="Search"/>
+		  		<span class="searchTip">sou</span>
+			</form>
+		</div>
+	$else :
+		<div class="alert alert-warn margin">查到0条信息
+			<form class="navbar-search pull-left " id="search" style="margin-top:-5px" action="/product/search" >
+		  		<input type="text" class="search-query" name="skey" placeholder="Search"/>
+		  		<span class="searchTip">sou</span>
+			</form>
+		</div>
+
+	<ul class="product ">
+		$if indexObj['product']:
+		  	$for product in indexObj['product']:
+		    	<li class="list">
+		    		<span class="price">￥$product.factory</span>
+		    		<a href="/product/$product.productId" target="_blank" class="pic"><img src="$product.pic" /></a>
+			        <p class="pname"><a target="_blank" href="/product/$product.productId">$product.product</a></p>
+		   		</li>
+		$else:
+			<li>
+		    	<div class="alert alert-warn">非常抱歉，没有查到结果,请尝试精确您的输入</div>
+		    </li>
+	</ul>
+	<div class="pagination pagination-centered">
+	  <ul>
+	  	$if indexObj['pages']:
+	  			$ showNum = 10
+		  		$if indexObj['curPage'] == 1:
+			   		<li class="disabled"><a href="#">上一页</a></li>
+			   	$else :
+			   		$ prev = indexObj['curPage']-2
+			   		<li ><a href="/product/search?skey=$indexObj['key']&page=$prev">上一页</a></li>
+				$if indexObj['pages'] <= showNum:		   	
+				    $for page in range(1,indexObj['pages']+1):
+				   		$ pageHref = page - 1
+				    	$if indexObj['curPage'] == page :
+				    		<li class="active"><a href="/product/search?skey=$indexObj['key']&page=$pageHref">$page</a></li>
+				    	$else:
+				    		<li ><a href="/product/search?skey=$indexObj['key']&page=$pageHref" >$page</a></li>
+
+				$elif indexObj['curPage']< showNum-1:
+					    $for page in range(1,showNum):
+					   		$ pageHref = page - 1
+						    	$if indexObj['curPage'] == page :
+						    		<li class="active"><a href="/product/search?skey=$indexObj['key']&page=$pageHref">$page</a></li>
+						    	$else:
+						    		<li ><a href="/product/search?skey=$indexObj['key']&page=$pageHref" >$page</a></li>
+					<li ><a href="###">…</a></li>
+
+				$elif indexObj['curPage']+showNum > indexObj['pages']:
+					<li ><a href="###">…</a></li>
+					$for page in range(indexObj['pages']-showNum+1,indexObj['pages']+1):
+				   		$ pageHref = page - 1
+					    	$if indexObj['curPage'] == page :
+					    		<li class="active"><a href="/product/search?skey=$indexObj['key']&page=$pageHref">$page</a></li>
+					    	$else:
+					    		<li ><a href="/product/search?skey=$indexObj['key']&page=$pageHref" >$page</a></li>
+				
+				$else : 
+					<li ><a href="###">…</a></li>
+					$for page in range(indexObj['curPage'],indexObj['curPage']+showNum-1):
+				   		$ pageHref = page - 1
+					    	$if indexObj['curPage'] == page :
+					    		<li class="active"><a href="/product/search?skey=$indexObj['key']&page=$pageHref">$page</a></li>
+					    	$else:
+					    		<li ><a href="/product/search?skey=$indexObj['key']&page=$pageHref" >$page</a></li>
+					<li ><a href="###">…</a></li>
+
+			$if indexObj['curPage'] == indexObj['pages']:
+				<li class="disabled"><a href="#">下一页</a></li>
+			$else :
+				$ next = indexObj['curPage']
+				<li ><a href="/product/search?skey=$indexObj['key']&page=$next">下一页</a></li>
+	  </ul>
+	</div>
+
+</div>  
+
+
+

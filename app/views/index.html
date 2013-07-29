@@ -1,0 +1,24 @@
+$def with (indexObj)
+
+$var title: 首页|北京金鼎恒业实验仪器经销部
+$var cssfiles: static/css/index.css
+$var jsfiles: 
+$var path : $indexObj['path']
+$var activeNav: index
+
+$if indexObj:
+    <p style="text-align:center">北京金鼎恒业实验仪器经销部</p>
+$else:
+    <em>Hello</em>, world!
+
+<div id="myCarousel" class="carousel slide indexSlide">
+
+	<div class="carousel-inner">
+	    <div class="active item"><img src="http://wangaibing-wangaibing.stor.sinaapp.com/1362311716.jpg"/></div>
+	    <div class="item"><img src="http://wangaibing-wangaibing.stor.sinaapp.com/1362318471.jpg"/></div>
+	    <div class="item"><img src="http://wangaibing-wangaibing.stor.sinaapp.com/1362318257.jpg"/></div>
+	</div>
+
+		<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+		<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>

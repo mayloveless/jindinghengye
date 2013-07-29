@@ -1,0 +1,12 @@
+.indexSlide{
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.item{
+	text-align: center;
+}
+
+.item img{
+	display: inline-block!important;
+}

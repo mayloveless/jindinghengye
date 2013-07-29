@@ -1,0 +1,46 @@
+$def with (indexObj)
+
+$var title: 产品展示|北京金鼎恒业实验仪器经销部
+$var cssfiles: /static/css/product.css
+$var jsfiles: /static/js/product.js
+$var path : $indexObj['path']
+$var activeNav: patent
+
+<div id="box">
+	<h2>以下为本公司专利产品</h1>
+	$if indexObj['product']:
+		<div class="alert alert-success ">共有$len(indexObj['product'])种产品
+			<form class="navbar-search pull-left " id="search" style="margin-top:-5px" action="/product/search" >
+		  		<input type="text" class="search-query" name="skey" placeholder="Search"/>
+		  		<span class="searchTip">sou</span>
+			</form>
+		</div>
+	$else :
+		<div class="alert alert-warn">共有0种产品
+			<form class="navbar-search pull-left " id="search" style="margin-top:-5px" action="/product/search" >
+		  		<input type="text" class="search-query" name="skey" placeholder="Search"/>
+		  		<span class="searchTip">sou</span>
+			</form>
+		</div>
+	<ul class="product ">
+		$if indexObj['product']:
+		  	$for product in indexObj['product']:
+		    	<li class="list">
+			        <span><a target="_blank" href="/product/$product.productId">$product.product</a></span>
+			     	<span>$product.factory</span>
+			      	<span>$product.size</span>
+			      	<span>$product.backup</span>
+			     	<span>$product.cataName</span>
+			     	
+			      	<span><a href="$product.pic" target="_blank"><img src="$product.pic" width="50px;" /></a></span>
+		   		</li>
+		$else:
+			<li>
+		    	<div class="alert alert-warn ">非常抱歉，产品正在研发当中，敬请期待</div>
+		    </li>
+	</ul>
+
+</div>  
+
+
+

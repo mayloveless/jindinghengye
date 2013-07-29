@@ -1,0 +1,67 @@
+.banner{
+  background: url(/static/img/navBg.jpg);
+  width: 100%;
+  overflow: hidden;
+}
+
+.banner .bgBox{
+  width: 1000px;
+  height: 190px;
+  margin: 0 auto;
+  display: block;
+  background: url(/static/img/banner.jpg);
+  position: relative;
+}
+
+.banner .bgBox a{
+  width: 200px;
+  height: 200px;
+  top:-20px;
+  position: absolute;
+  display: block;
+  left:40px;
+  background: url(/static/img/LOGO.png);
+  text-indent: -9999px;
+}
+
+.banner .bgBox .contents{
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+  color: #df3c27;
+  margin-top: 30px;
+  margin-right: 20px;
+  line-height: 30px;
+}
+
+.myNav .navUl{
+  float: none;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.myNav .navUl li{
+  width: 140px;
+  text-align: center;
+}
+
+.myNav .navLink{
+  color: #6C2300;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.myNav .navLink:hover{
+  color: #fff!important;
+  background: url(/static/img/navBg.jpg);
+  text-shadow:none;
+}
+
+#page-footer{
+  clear:both;
+  padding-top: 50px;
+}
+
+.margin {
+  margin-left: 150px!important
+}

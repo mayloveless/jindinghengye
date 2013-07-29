@@ -1,0 +1,9 @@
+name: wangaibing
+version: 1
+cron:
+- description: if13sis
+  url: /if13sis
+  schedule: "*/1 * * * *"
+- description: getToken
+  url: /get_token
+  schedule: every day of month 22:00

@@ -1,0 +1,53 @@
+.single .pic{
+	width: 640px;
+}
+
+.single .pic a{
+	width: 100%;
+	display: block;
+	text-align: center;
+}
+
+.single .pic img{
+	max-width: 620px;
+}
+
+.single .simpleDesc{
+	width: 200px;
+	float: right;
+	padding:5px;
+	font-size: 16px;
+}
+.single .simpleDesc .price{
+	color: #df3c27;
+	font-weight: bold;
+}
+
+.single .desc{
+	font-size: 15px;
+	line-height: 30px;
+	text-indent: 2em;
+}
+
+.single .simpleDesc .simpleDescTitle{
+	background:#1d88b4; 
+	border-radius: 4px 4px 0 0;
+	margin: -5px -5px 5px -5px;
+	color: #fff;
+	padding: 3px 0 3px 15px;
+}
+
+.single .simpleDesc .simpleDescTitle i{
+	margin-right: 10px;
+}
+
+.single .simpleDesc p{
+	padding-left: 5px;
+}
+.pathTitle{
+	width: 450px;
+	text-overflow:ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	height: 20px;
+}

@@ -1,0 +1,71 @@
+$def with (indexObj)
+
+$var title: 在线留言|北京金鼎恒业实验仪器经销部
+$var cssfiles: 
+$var jsfiles: /static/js/message.js
+$var activeNav: message
+
+<style>
+	form{
+		width: 500px;
+		margin: 30px auto;
+		font-size: 16px;
+		line-height: 30px;
+	}
+	input[type=text]{
+		height: 30px;
+	}
+	textarea{
+		width: 340px;
+	}
+
+	.tip{
+		text-align: center;
+	}
+	.red{
+		color: red;
+		font-size: 20px;
+	}
+	.help-inline{
+		display: none;
+	}
+</style>
+
+$if indexObj['isJustDone'] : 
+	<div class="alert alert-error tip">留言成功！感谢您的留言，我们会在第一时间与您联系</div>
+
+<form action="/message" method="post" id="msgForm" >
+	<strong>带<span class="red">*</span>为必填选型</strong>
+	<div class="control-group ">
+		<label class="control-label" for="name"><span class="red">*</span>姓名</label>
+		<div class="controls">
+		    <input maxlength="255" type="text" id="name" name="name"  class="input-xlarge" >
+		     <span class="help-inline">请输入姓名</span>
+		</div>
+	</div>
+	<div class="control-group ">
+		<label class="control-label" for="factory"><span class="red">*</span>来自（厂家）</label>
+		<div class="controls">
+		    <input maxlength="255" type="text" id="factory" name="factory"  class="input-xlarge" >
+		    <span class="help-inline">请输入您的公司</span>
+		</div>
+	</div>
+	<div class="control-group ">
+		<label class="control-label" for="contact"><span class="red">*</span>联系方式(手机/  座机请加区号 无分隔，如：01060389455)</label>
+		<div class="controls">
+		    <input maxlength="11" type="text" id="contact" name="contact" class="input-xlarge">
+		    <span class="help-inline">请填写正确的电话号码</span>
+		</div>
+	</div>	
+	<div class="control-group ">
+		<label class="control-label" for="content"><span class="red">*</span>留言</label>
+		<div class="controls">
+		    <textarea maxlength="255" rows="5" name="content" id="content"></textarea>
+		    <span class="help-inline">说点儿什么吧</span>
+		</div>
+	</div>
+	<div class="form-actions">
+	  <input type="submit" id="sub" class="btn btn-primary" value="好了，提交"/>
+
+	</div>
+</form>

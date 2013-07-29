@@ -1,0 +1,13 @@
+$def with (indexObj)
+
+$var title: 合作伙伴|北京金鼎恒业实验仪器经销部
+$var cssfiles: static/css/index.css
+$var jsfiles: 
+$var path : $indexObj['path']
+$var activeNav: partner
+
+$if indexObj:
+    北京金鼎恒业实验仪器经销部 <em>hello</em> to $indexObj['name'].
+$else:
+    <em>Hello</em>, world!
+
